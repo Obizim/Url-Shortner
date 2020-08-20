@@ -25,7 +25,187 @@
                 padding: 15px 25px;
                 border-radius: 50px;
                 color: #fff;
+                outline: none;
+                cursor: pointer;
             }
         }
     }
+    
+
+    .shorten-links {
+        position: relative;
+        left: 0rem;
+        top: 5rem;
+        margin: 20px 15rem;
+        background: $DarkViolet;  
+        background-image: url('../../assets/images/bg-shorten-desktop.svg');
+        padding: 4rem 5rem;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(253, 253, 253, 0.3);
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input {
+            width: 600px;
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            padding: 20px;
+            margin: 10px;
+            outline: none;
+
+            &::placeholder{
+                font-size: 15px;
+                font-weight: 400;
+            }
+        }
+        
+        button {
+            padding: 12px 20px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: $Cyan;
+            color: #fff;
+            margin: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
+    article {
+        background-color: $Gray;
+        padding: 8rem 0;
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+
+        h1 {
+            font-size: 2rem;
+            color: $VeryDarkViolet;
+        }
+        p{
+            text-align: center;
+            width: 500px;
+            margin-top: 10px;
+            color:lighten($VeryDarkViolet, 30%)
+        }
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        gap: 40px;
+        padding: 2rem 10rem;
+
+        .feature {
+            background-color: #fff;
+            border-radius: 5px;
+
+            &:not(:first-child){
+                margin-top: 6rem;
+            }
+
+            &:last-child {
+                margin-top: 12rem;
+            }
+
+            img {
+                background: $VeryDarkBlue;
+                padding: 20px;
+                border-radius: 50px;
+                position: relative;
+                top: -2rem;
+                left: 2rem;
+            }
+            .texts {
+                padding: 30px 20px;
+
+                h2 {
+                    color: $VeryDarkViolet;
+                    font-size: 1rem;
+                    margin-bottom: 5px;
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 1.2rem;
+                    color: $Gray;
+                }
+            }
+        }
+    }
+
+    }
+
+    .bookings {
+        background-color: $VeryDarkBlue;
+        background-image: url('../../assets/images/bg-boost-desktop.svg');
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+
+        h2{
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        button{
+            border: 1px solid transparent;
+            background-color: $Cyan;
+            padding: 10px 30px;
+            border-radius: 50px;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    }
+
+    .footer {
+        background: $VeryDarkViolet;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        place-items: center;
+        padding: 50px;
+
+        ul {
+            list-style: none;
+
+            p{
+                color: #fff;
+            }
+
+            li{
+                color: $Gray;
+                font-size: 0.8rem;
+                margin: 5px;
+            }
+        }
+
+        .footer-img{
+            img{
+                margin: 10px;
+            }
+        }
+    }
+
+    .attribution {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #fff;
+        background: $VeryDarkViolet;
+        padding: 10px;
+
+        a{
+            text-decoration: none;
+        }
+    }
+
 }
