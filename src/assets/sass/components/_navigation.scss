@@ -1,0 +1,46 @@
+.AppNavigation {
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 10rem;
+    }
+
+    .nav_item{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img {
+            margin: 15px;
+        }
+
+        a{
+            text-decoration: none;
+            margin: 15px;
+            color: $GrayishViolet;
+            cursor: pointer;
+        }
+    }
+
+    .auth{
+        margin-right: 6rem;
+        .login{
+            background: transparent;
+            border: none;
+            color: $GrayishViolet;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .signup{
+            border: 1px solid transparent;
+            background-color: $Cyan;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    }
+}
