@@ -11,7 +11,7 @@
             margin: 0 10rem;
 
             h1 {
-                font-size: 4rem;
+                font-size: 3rem;
                 font-weight: 700;
                 color: $VeryDarkViolet;
             }
@@ -35,11 +35,11 @@
     .shorten-links {
         position: relative;
         left: 0rem;
-        top: 5rem;
+        top: 6rem;
         margin: 20px 15rem;
         background: $DarkViolet;  
         background-image: url('../../assets/images/bg-shorten-desktop.svg');
-        padding: 4rem 5rem;
+        padding: 2em 2em;
         border-radius: 5px;
         box-shadow: 0 3px 5px rgba(253, 253, 253, 0.3);
 
@@ -55,6 +55,7 @@
             border-radius: 5px;
             border: 1px solid transparent;
             padding: 20px;
+            font-weight: inherit;
             margin: 10px;
             outline: none;
 
@@ -76,9 +77,51 @@
         }
     }
 
+    .outputs{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        background-color: #fff;
+        padding: 7px 10px;
+        border-radius: 5px;
+        position: relative;
+        left: 0rem;
+        top: -4rem;
+        margin: 20px 15rem;
+
+        h3 {
+            color: $VeryDarkBlue;
+            font-weight: 400;
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            a{
+                text-decoration: none;
+                margin: 10px;
+                color: $Cyan;
+                cursor: pointer;
+            }
+            button {
+                padding: 5px 10px;
+                border: 1px solid transparent;
+                border-radius: 5px;
+                background-color: $Cyan;
+                color: #fff;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+
+    }
+
     article {
         background-color: $Gray;
-        padding: 8rem 0;
+        padding: 6rem 0;
+        margin-top: 4rem;
 
         .heading {
             display: flex;
