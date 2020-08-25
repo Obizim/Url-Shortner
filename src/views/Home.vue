@@ -34,7 +34,13 @@
         <h3 class="link">{{ mainUrl }}</h3>
         <div>
           <a :href="short">{{ short }}</a>
-          <button>Copy</button>
+          <button
+            id="btn"
+            @click="doCopy"
+            v-bind:class="{ 'is-active': error }"
+          >
+            Copy
+          </button>
         </div>
       </div>
 
@@ -176,20 +182,37 @@ export default {
       this.url = e.target.value;
     },
     getShortnedUrl() {
-       if (this.url === "" | !this.url.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig)){
-        this.error = true
-      } else{
-        this.error = false
-      this.isOpen = true;
-      axios
-        .post("https://rel.ink/api/links/", {
-          url: this.url
-        })
-        .then(response => {
-          this.mainUrl = response.data.url;
-          this.short = `https://rel.ink/${response.data.hashid}`;
-        });
-    }
+      if (
+        (this.url === "") |
+        !this.url.match(
+          /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi
+        )
+      ) {
+        this.error = true;
+      } else {
+        this.error = false;
+        this.isOpen = true;
+        axios
+          .post("https://rel.ink/api/links/", {
+            url: this.url
+          })
+          .then(response => {
+            this.mainUrl = response.data.url;
+            this.short = `https://rel.ink/${response.data.hashid}`;
+          });
+      }
+    },
+    doCopy: function() {
+      this.$copyText(this.short).then(
+        function() {
+          document.getElementById("btn").innerHTML = "Copied";
+          document.getElementById("btn").classList.add("is-active");
+        },
+        function() {
+          document.getElementById("btn").innerHTML = "Copy";
+          document.getElementById("btn").classList.remove("is-active");
+        }
+      );
     }
   }
 };
