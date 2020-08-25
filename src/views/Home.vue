@@ -22,9 +22,11 @@
           type="text"
           placeholder="Shorten a link here .."
           inputmode="url"
+          v-bind:class="{ 'is-active': error }"
         />
         <button @click.prevent="getShortnedUrl">Shorten it</button>
       </form>
+      <p v-show="error">Please add a link(must include https://)</p>
     </section>
 
     <article>
@@ -162,9 +164,10 @@ export default {
   data() {
     return {
       url: "",
-      mainUrl: "",
+      mainUrl: null,
       short: "",
-      isOpen: false
+      isOpen: false,
+      error: false
     };
   },
   methods: {
@@ -173,6 +176,10 @@ export default {
       this.url = e.target.value;
     },
     getShortnedUrl() {
+       if (this.url === "" | !this.url.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig)){
+        this.error = true
+      } else{
+        this.error = false
       this.isOpen = true;
       axios
         .post("https://rel.ink/api/links/", {
@@ -182,6 +189,7 @@ export default {
           this.mainUrl = response.data.url;
           this.short = `https://rel.ink/${response.data.hashid}`;
         });
+    }
     }
   }
 };

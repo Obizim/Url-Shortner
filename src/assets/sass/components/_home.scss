@@ -45,12 +45,10 @@
 
         form {
             display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         input {
-            width: 600px;
+            width: 750px;
             height: 45px;
             border-radius: 5px;
             border: 1px solid transparent;
@@ -63,10 +61,14 @@
                 font-size: 15px;
                 font-weight: 400;
             }
+
+            &.is-active{
+                border: 2px solid $Red;
+            }
         }
         
         button {
-            padding: 12px 20px;
+            padding: 8px 20px;
             border: 1px solid transparent;
             border-radius: 5px;
             background-color: $Cyan;
@@ -74,6 +76,11 @@
             margin: 10px;
             outline: none;
             cursor: pointer;
+        }
+        p{
+            color: $Red;
+            font-size: 13px;
+            margin: 10px;
         }
     }
 
