@@ -45,4 +45,68 @@
             outline: none;
         }
     }
+
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .AppNavigation {
+    .menu {
+        display: block;
+        cursor: pointer;
+        #burger {
+            visibility: visible;
+        }
+        #close-menu {
+            visibility: hidden;
+        }
+
+        &.openNav {
+            
+            #burger {
+                visibility: hidden;
+            }
+            #close-menu {
+                visibility: visible;
+            }
+        }
+    }
+
+    .nav {
+        padding: 30px 10px;
+    }
+
+    .nav_items {
+        
+    }
+    .links {
+        background: $DarkViolet;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        padding: 15px;
+        top: 6rem;
+        left: 0rem;
+        margin: 0 1rem;
+        padding: 1.5rem rem;
+
+        a {
+            margin: 5px;
+        }
+    }
+    .auth {
+        background: $DarkViolet;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 13rem;
+        left: 0rem;
+        margin: 0 1rem;
+        padding: 1.5rem 2rem;
+    }
+    }
 }

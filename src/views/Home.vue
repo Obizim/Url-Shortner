@@ -47,8 +47,8 @@
       <div class="heading">
         <h1>Advanced Statistics</h1>
         <p>
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
+          Track how your links are performing across the web with <br />
+          our advanced statistics dashboard.
         </p>
       </div>
 
@@ -199,6 +199,10 @@ export default {
           .then(response => {
             this.mainUrl = response.data.url;
             this.short = `https://rel.ink/${response.data.hashid}`;
+          })
+          .catch(() => {
+            this.mainUrl =
+              "Check your internet connection and make sure that is a valid link";
           });
       }
     },

@@ -93,7 +93,7 @@
         grid-template-columns: repeat(2,1fr);
         align-items: center;
         background-color: #fff;
-        padding: 7px 10px;
+        padding: 10px 10px;
         border-radius: 5px;
         position: relative;
         left: 0rem;
@@ -107,7 +107,6 @@
 
         div{
             display: flex;
-            align-items: center;
             justify-content: flex-end;
 
             a{
@@ -149,7 +148,6 @@
         }
         p{
             text-align: center;
-            width: 500px;
             margin-top: 10px;
             color:lighten($VeryDarkViolet, 30%)
         }
@@ -163,6 +161,9 @@
         padding: 2rem 10rem;
 
         .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: #fff;
             border-radius: 5px;
 
@@ -180,7 +181,7 @@
                 border-radius: 50px;
                 position: relative;
                 top: -2rem;
-                left: 2rem;
+                left: -7rem;
             }
             .texts {
                 padding: 30px 20px;
@@ -235,6 +236,7 @@
 
         ul {
             list-style: none;
+            margin-top: 20px;
 
             p{
                 color: #fff;
@@ -266,4 +268,105 @@
         }
     }
 
+}
+
+@media screen and (max-width: 1024px) {
+    .home {
+        .landing-page {
+            flex-direction: column-reverse;
+            padding: 5px;
+
+            img {
+                width: 100%;
+            }
+
+            .texts {
+                margin: 30px 0;
+                text-align: center;
+            }
+        }
+
+        .shorten-links { 
+                top: 6rem;
+                padding: 1.5rem 2rem;
+                margin: 0 1rem;
+                background-image: url('../../assets/images/bg-shorten-mobile.svg') no-repeat;
+
+                form {
+                    flex-direction: column;
+                }
+
+                input {
+                    align-self: center;
+                    width: 100%;
+                }
+                button {
+                    align-self: center;
+                    width: 100%;
+                    padding: 15px;
+                }
+        }
+
+        .outputs {
+            top: -3rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 2rem;
+            margin: 0 1rem;
+
+            h3 {
+                text-align:  left;
+                border-bottom: 1px solid $VeryDarkBlue;
+            }
+
+            div {
+                flex-direction: column;
+
+                a {
+                    align-self: center;
+                }
+                button {
+                    align-items: center;
+                    width: 100%;
+                }
+            }
+        }
+
+        article {
+            .heading {
+                text-align: center;
+                margin: 10px 3px;
+            }
+
+            .features {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                padding: 20px;
+                margin-top: 5rem;
+
+                .feature {
+                    
+                    img {
+                        left: 0rem;
+                    }
+
+                    &:not(:first-child){
+                        margin-top: 0;
+                    }
+        
+                    &:last-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 }
