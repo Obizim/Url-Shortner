@@ -2,29 +2,31 @@
     .nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 30px 10rem;
+        justify-content: center;
+        padding: 40px 10rem;
     }
 
     .nav_item{
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-
-        img {
-            margin: 15px;
-        }
+        justify-content: space-between;
 
         a{
             text-decoration: none;
             margin: 15px;
             color: $GrayishViolet;
             cursor: pointer;
+
+            &:hover {
+                color: $VeryDarkBlue;
+                transition: .8s ease-in-out;
+            }
         }
     }
 
     .auth{
-        margin-right: 6rem;
+        margin-left: 25rem;
+
         .login{
             background: transparent;
             border: none;
@@ -51,62 +53,78 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px){
     .AppNavigation {
     .menu {
         display: block;
+        width: 30px;
         cursor: pointer;
         #burger {
-            visibility: visible;
+            display: block;
         }
         #close-menu {
-            visibility: hidden;
+            display: none;
         }
 
         &.openNav {
             
             #burger {
-                visibility: hidden;
+                display: none;
             }
             #close-menu {
-                visibility: visible;
+                display: block;
             }
         }
     }
 
     .nav {
-        padding: 30px 10px;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 10px;
     }
 
-    .nav_items {
-        
-    }
-    .links {
-        background: $DarkViolet;
+    .nav_item {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background: $DarkViolet;
         position: absolute;
-        padding: 15px;
+        left: 0;
         top: 6rem;
-        left: 0rem;
-        margin: 0 1rem;
-        padding: 1.5rem rem;
+        padding: 2rem 5rem;
+        margin: 0 20px;
+        border-radius: 5px;
+        visibility: hidden;
+        transition: .8s ease-in-out;
+        transform: translateX(-100%);
 
-        a {
-            margin: 5px;
+        &.openNav{
+            visibility: visible;
+            transition: .8s ease-in-out;
+            transform: translateX(0);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid $GrayishViolet;
+            
+            a {
+                margin: 5px;
+                text-align: center;
+                color: #fff;
+            }
         }
     }
+
     .auth {
-        background: $DarkViolet;
+        margin: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 13rem;
-        left: 0rem;
-        margin: 0 1rem;
-        padding: 1.5rem 2rem;
+
+        .login {
+            color: #fff;
+        }
     }
     }
 }

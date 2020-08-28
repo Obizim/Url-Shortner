@@ -1,19 +1,20 @@
 <template>
   <div class="AppNavigation">
     <nav class="nav">
-      <div class="nav_item">
         <img src="../assets/images/logo.svg" alt="logo" />
-        <div class="links">
+
+          <div v-bind:class="{ openNav: isActive }" class="nav_item">
+            <div class="links">
           <router-link to="/">Features</router-link>
           <router-link to="/">Pricing</router-link>
           <router-link to="/">Resources</router-link>
-        </div>
-      </div>
-
-      <div class="auth nav_item">
+            </div>
+            
+      <div class="auth">
         <button class="login">Login</button>
         <button class="signup">Sign Up</button>
       </div>
+     </div>
 
       <div @click="openNav" v-bind:class="{ openNav: isActive }" class="menu">
         <img
