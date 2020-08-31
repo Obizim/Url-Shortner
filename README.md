@@ -1,4 +1,4 @@
-# rest-country-api
+# url-shortner
 
 ## Project setup
 ```

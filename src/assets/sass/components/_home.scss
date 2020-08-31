@@ -35,9 +35,9 @@
     .shorten-links {
         position: relative;
         left: 0rem;
-        top: 6rem;
+        top: 9rem;
         margin: 20px 15rem;
-        background: $DarkViolet;  
+        background-color: $DarkViolet;  
         background-image: url('../../assets/images/bg-shorten-desktop.svg');
         padding: 2em 2em;
         border-radius: 5px;
@@ -45,16 +45,17 @@
 
         form {
             display: flex;
+            align-items: center;
+            justify-content: space-evenly;
         }
 
         input {
-            width: 750px;
+            width: 800px;
             height: 45px;
             border-radius: 5px;
             border: 1px solid transparent;
             padding: 20px;
             font-weight: inherit;
-            margin: 10px;
             outline: none;
 
             &::placeholder{
@@ -77,14 +78,13 @@
             border-radius: 5px;
             background-color: $Cyan;
             color: #fff;
-            margin: 10px;
             outline: none;
             cursor: pointer;
         }
         p{
             color: $Red;
             font-size: 13px;
-            margin: 10px;
+            margin: 10px 20px;
         }
     }
 
@@ -97,7 +97,7 @@
         border-radius: 5px;
         position: relative;
         left: 0rem;
-        top: -4rem;
+        top: 0rem;
         margin: 20px 15rem;
 
         h3 {
@@ -116,7 +116,7 @@
                 cursor: pointer;
             }
             button {
-                padding: 5px 10px;
+                padding: 10px 20px;
                 border: 1px solid transparent;
                 border-radius: 5px;
                 background-color: $Cyan;
@@ -154,11 +154,10 @@
     }
 
     .features {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: row;
         place-items: center;
-        gap: 40px;
-        padding: 2rem 10rem;
+        padding: 2rem 5rem;
 
         .feature {
             display: flex;
@@ -166,6 +165,7 @@
             align-items: center;
             background-color: #fff;
             border-radius: 5px;
+            margin: 0px 10px;
 
             &:not(:first-child){
                 margin-top: 6rem;
@@ -209,7 +209,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 50px 0;
+        padding: 4rem;
 
         h2{
             color: #fff;
@@ -291,10 +291,11 @@
         }
 
         .shorten-links { 
-                top: 6rem;
+                top: 8rem;
                 padding: 1.5rem 2rem;
                 margin: 0 1rem;
-                background-image: url('../../assets/images/bg-shorten-mobile.svg') no-repeat;
+                background-image: url('../../assets/images/bg-shorten-mobile.svg');
+                background-size: cover;
 
                 form {
                     flex-direction: column;
@@ -303,6 +304,7 @@
                 input {
                     align-self: center;
                     width: 100%;
+                    margin: 10px 0;
                 }
                 button {
                     align-self: center;
@@ -315,19 +317,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            top: -3rem;
+            top: -1rem;
             padding: 1rem 2rem;
             margin: 0 1rem;
 
             h3 {
-                text-align:  left;
+                font-size: 16px;
                 border-bottom: 1px solid $VeryDarkBlue;
             }
 
             div {
                 flex-direction: column;
-                align-items: flex-start;
-                justify-content: space-between;
+
+                a {
+                    font-size: 14px;
+                }
 
                 button {
                     position: relative;
@@ -343,14 +347,12 @@
             }
 
             .features {
-                display: flex;
                 flex-direction: column;
-                gap: 60px;
-                padding: 20px;
+                padding: 0px;
                 margin-top: 5rem;
 
                 .feature {
-                    
+                    margin: 4rem 1rem;
                     img {
                         left: 0rem;
                     }
@@ -366,6 +368,12 @@
             }
         }
 
+        .bookings {
+            h2 {
+                text-align: center;
+            }
+        }
+
         .footer {
             display: flex;
             flex-direction: column;
@@ -373,4 +381,33 @@
             justify-content: space-between;
         }
     }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px){
+    .home {
+        .landing-page {
+            .texts {
+                margin: 0 30px;
+            }
+        }
+
+        .shorten-links {
+            margin: 20px 5rem;
+            top: 7rem;
+        }
+
+        .outputs {
+            margin: 20px 5rem;
+            top: -3rem;
+        }
+
+        article { 
+        .features {
+            padding: 2rem 3rem;
+            .feature {
+                margin: 0 20px;
+            }
+        }
+    }
+}
 }
